@@ -24,8 +24,7 @@ SECRET_KEY = '@&8dlqg5@+qz7mts+q0q#e##x91i*psm=q#=5+pw16498^(u=$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['titanic-prediction.herokuapp.com']
+ALLOWED_HOSTS = ['titanic-prediction.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -118,7 +117,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join('static'),)
+
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
