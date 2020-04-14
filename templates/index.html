@@ -12,12 +12,17 @@
     <button type="button" onclick="clicked()">click here to test js.</button>
     <br>
     <br>
-    <h3>Get your titanic prediction here.</h3>
-    <p>Fill in the details to create virtual pasenger to predict would he/she <b>survive or not.</b></p>
+    <h4>Fill in the details to create virtual pasenger.</h4>
+    <br>
+    <p>We will predict would he/she <b>survive or not.</b></p>
 
     <form action="{% url 'pred' %}">
         {% csrf_token %}
-        pclass,sex,age,sibhp,parch,fare,mbarked,title
+<!--        pclass,sex,age,sibhp,parch,fare,mbarked,title-->
+        <br>
+        <br>
+        <br>
+
         <p>pessenger class</p>
         <select name="pclass">
           <option value="1">1</option>
@@ -91,6 +96,7 @@
         </select>
 
         <!--        <input type="text" name="title">-->
+        <h3>Get your titanic prediction here.</h3>
 
         <input type="submit">
     </form>
