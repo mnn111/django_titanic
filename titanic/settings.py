@@ -25,7 +25,7 @@ SECRET_KEY = '@&8dlqg5@+qz7mts+q0q#e##x91i*psm=q#=5+pw16498^(u=$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['secret-plains-32485.herokuapp.com']
+ALLOWED_HOSTS = ['titanic-prediction.herokuapp.com']
 
 
 # Application definition
