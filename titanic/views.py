@@ -14,6 +14,7 @@ def prediction(request):
     title = request.GET['title']
 
 
-    prediction = titanic_model.rfc(pclass,sex,age,sibhp,parch,fare,mbarked,title)
+    pred, prediction = titanic_model.rfc(pclass,sex,age,sibhp,parch,fare,mbarked,title)
 
-    return render(request, 'prediction.html', {'prediction': prediction})
+    return render(request, 'prediction.html', {'pred': pred,
+                                               'prediction': prediction})
