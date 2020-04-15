@@ -8,9 +8,9 @@ def rfc(pclass, sex, age, sibhp, parch, fare, mbarked, title):
         pred = randomforest.predict(x)
         # pred =123
         if pred == 0:
-            pred = 'will not survive'
+            pred = 'Will not Survive'
         elif pred == 1:
-            pred = "survive"
+            pred = "Survive"
         else:
             pred = "Error"
 
@@ -20,15 +20,15 @@ def rfc(pclass, sex, age, sibhp, parch, fare, mbarked, title):
     model_predict = load_model('titanic_nn_keras.h5')
 
 
-    person = np.array([[1,2,30,2,2,50,2,1]])
+    person = np.array([[pclass, sex, age, sibhp, parch, fare, mbarked, title]])
     prediction_rate = model_predict.predict(person)
     # print(prediction_rate)
 
 
     if prediction_rate >.5 :
-        prediction = "Survived"
+        prediction = "Survive"
     else:
-        prediction = "not Survived"
+        prediction = "Will not Survive"
     # print(prediction)
-
-    return pred, prediction
+    prediction_rate = round(prediction_rate[0][0]*100, 2)
+    return pred, prediction, prediction_rate
